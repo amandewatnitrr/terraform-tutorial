@@ -109,3 +109,19 @@
   ```
 
   ![](./imgs/Screenshot%202024-10-03%20at%2012.01.45 PM.png)
+
+  Let's now change the length from 16 to 10. And, run the following to see what changes Terraform will make.
+
+  ```bash
+  >> terraform plan
+  ```
+
+  ![](./imgs/Screenshot%202024-10-03%20at%2012.52.00 PM.png)
+
+- To apply the changes, run the following command.
+
+  ```bash
+  >> terraform apply
+  ```
+
+  ![](./imgs/Screenshot%202024-10-03%20at%2012.53.26 PM.png)

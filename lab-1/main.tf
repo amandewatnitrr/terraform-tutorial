@@ -1,3 +1,3 @@
 resource "random_string" "str" {
-    length = 16
+    length = 10
 }
