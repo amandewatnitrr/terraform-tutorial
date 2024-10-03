@@ -102,12 +102,6 @@
 
   ![](./imgs/Screenshot%202024-10-03%20at%2012.00.53 PM.png)
 
-- Run the following command to destroy the Terraform-managed infrastructure.
-
-  ```bash
-  >> terraform destroy
-  ```
-
   ![](./imgs/Screenshot%202024-10-03%20at%2012.01.45 PM.png)
 
   Let's now change the length from 16 to 10. And, run the following to see what changes Terraform will make.
@@ -125,3 +119,16 @@
   ```
 
   ![](./imgs/Screenshot%202024-10-03%20at%2012.53.26 PM.png)
+
+  So, now you see the update process is nothing but destroying the old resource and creating a new one.
+
+  ![](./imgs/Screenshot%202024-10-03%20at%2012.56.23 PM.png)
+
+- Run the following command to destroy the Terraform-managed infrastructure.
+
+  ```bash
+  >> terraform destroy
+  ```
+
+  ![](./imgs/Screenshot%202024-10-03%20at%2012.57.59 PM.png)
+  ![](./imgs/Screenshot%202024-10-03%20at%2012.58.13 PM.png)
