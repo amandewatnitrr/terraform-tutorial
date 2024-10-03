@@ -147,14 +147,50 @@ The list below represents some of the most popular Infrastructure as Code tools 
 
   ![](./imgs/image-17.png)
 
-
 ## Infrastructure Provisioning Vs Configuration Management
 
 - Infrastructure provisioning and configuration management are two different concepts, but they are often used together to automate the infrastructure deployment and configuration.
 
-- Infrastructure provisioning is the process of creating infrastructure resources like servers, networks, storage, etc., while configuration management is the process of configuring the provisioned infrastructure resources.
+>[!IMPORTANT]
+>Infrastructure provisioning is the process of creating infrastructure resources like servers, networks, storage, etc., while configuration management is the process of configuring the provisioned infrastructure resources.
 
 - Infrastructure provisioning tools like Terraform, Pulumi, and CloudFormation are used to create infrastructure resources, while configuration management tools like Ansible, Chef, and Puppet are used to configure the provisioned resources.
 
 ![](./imgs/image-19.png)
 
+## Terraform's Purpose
+
+### Terraform Goals
+
+- Unify the view of resources using infrastructure as code
+- Support the modern data center (IaaS, PaaS, SaaS)
+- Expose a way for individuals and teams to safely and predictably change infrastructure
+- Provide a workflow that is technology agnostic
+- Manage anything with an API
+
+![](./imgs/obj-2-terraform-goals.png)
+
+### Terraform Benefits
+
+- Provides a high-level abstraction of infrastructure (IaC)
+- Allows for composition and combination
+- Supports parallel management of resources (graph, fast)
+- Separates planning from execution (dry-run)
+
+>[!TIP]
+>Terraform is going to go out and going to build a dependency graph of all the resources that are included in the configuration file.<br/><br/>
+> If we have a bunch of different resources specified in the configuration file, what terraform will do is figure out which one's are not dependent on any other resources and it will start deploying those resources in parallel. This is a huge benefit because it can save a lot of time when deploying resources.
+
+>[!NOTE]
+>Terraform allows you to execute a dry-run for your new configuration file against your real-world resources that are deployed in the public cloud, and tell you what's going to change.
+
+![](./imgs/obj-2-terraform-benefits.png)
+
+<hr/>
+
+## Benifits of Terraform State
+
+- Terraform is going to require state in order to store information about the infrastructure and resources that it's managing. This is going to be stored in a file called `terraform.tfstate`.
+
+>[!IMPORTANT]
+>You cannot use Terraform without state. By default `state` is stored locally in the drectory we are going to execute our terraform.<br/><br/> We do have the option to store the state file in a remote backend, so the ability to mange and modify your state is really specially important when we have more than one person that's going to manage these same resources in Terraform.<br/><br/> Terraform will use `state` each time we run `terraform plan apply` or `terraform destroy` to determine what resources are going to be created, updated or destroyed.
