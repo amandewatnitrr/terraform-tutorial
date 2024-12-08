@@ -188,9 +188,11 @@ The list below represents some of the most popular Infrastructure as Code tools 
 
 <hr/>
 
-## Benifits of Terraform State
+## Benefits of Terraform State
 
 - Terraform is going to require state in order to store information about the infrastructure and resources that it's managing. This is going to be stored in a file called `terraform.tfstate`.
 
 >[!IMPORTANT]
 >You cannot use Terraform without state. By default `state` is stored locally in the drectory we are going to execute our terraform.<br/><br/> We do have the option to store the state file in a remote backend, so the ability to mange and modify your state is really specially important when we have more than one person that's going to manage these same resources in Terraform.<br/><br/> Terraform will use `state` each time we run `terraform plan apply` or `terraform destroy` to determine what resources are going to be created, updated or destroyed.
+
+
